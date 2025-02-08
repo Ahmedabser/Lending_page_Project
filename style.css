@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #eae5e5;
+    background-image: url("https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b");
+}
+
+/* ------Header(Nav Bar) Styles----- */
+header {
+    background-color: #1a1a1a;
+    background-image: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+} 
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* تباعد الحروف */
+    text-transform: uppercase;
+    /* تحويل النص الى كبير */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.nav-links a:hover {
+    color: #a14587 !important;
+    border-bottom-color: transparent; /* إزالة لون الحدود السفلية */
+}
+
+.btn-nav {
+    color: #fff;
+    background-color: #f39c12;
+    padding: 12px 25px;
+    border: none;
+    /* إزالة الحدود */
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* تغيير اللون عند التمرير */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    font-size: 18px;
+    /* إزالة الخط السفلي من الرابط */
+    text-decoration: none;
+}
+
+.menu-icon {
+    /* زرار القائمة الجانبية لما يشتغل خاصية الهاتف*/
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+}
+
+.menu-icon .bar {
+    /* البارات اللي هتظهر لما يتفعل الزرار */
+    background-color: #fff;
+    height: 4px;
+    width: 100%;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+.menu-icon .bar:nth-child(2){
+    width: 50%;
+}
+.menu-icon .bar:nth-child(3){
+    width: 75%;
+}
+.menu-icon .bar:nth-child(4){
+    width: 50%;
+}
+.menu-icon .bar:nth-child(5){
+    width: 75%;
+}
+.menu-icon .bar:nth-child(6){
+    width: 100%;
+}
+.menu-icon.active .bar {
+    background-color: #e44c65;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #2d1f1f;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        color: #fff;
+    }
+}
+
+/* ------Main Styles----- */
+.parent {
+
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    /* Ensures no image overflows */
+}
+
+.child {
+    position: relative;
+    
+}
+
+
+/* البانر */
+#banner {
+    padding: 80px 25px;
+    position: relative;
+    text-align: center;
+    /* محاذاة النص داخل العنصر إلى الوسط */
+    background-color: #1a1a1a;
+    /* تحديد اللون الخلفي للـ banner بلون داكن (رمادي غامق) */
+    background-image: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+    /* إضافة خلفية متدرجة (gradient) بزاوية 135 درجة من اللون الرمادي الفاتح إلى الداكن */
+    color: #fff;
+    /* تغيير لون النص إلى اللون الأبيض (للتباين مع الخلفية الداكنة) */
+    min-height: calc(100vh - 44px);
+    /* تحديد الحد الأدنى لارتفاع الـ banner ليكون مساوٍ لارتفاع الشاشة بالكامل مخصومًا منها 44px */
+    display: flex;
+    /* استخدام flexbox لتوزيع العناصر داخل الـ banner */
+    justify-content: center;
+    /* محاذاة العناصر أفقيًا في المركز (في منتصف الـ banner) */
+    align-items: center;
+    /* محاذاة العناصر عموديًا في المنتصف */
+    flex-direction: column;
+    /* ترتيب العناصر بشكل عمودي داخل الـ banner */
+    box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.25);
+    /* إضافة تأثير الظل حول الـ banner لجعل العنصر يبدو مرفوعًا قليلاً */
+}
+
+/* عنصر الـ text */
+.dia h2 {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #f39c12;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dia p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    /*تقليل شفافية النص ليظهر بشكل أبهى */
+
+}
+
+/* تحسين الصورة */
+.img-container {
+    width: 280px;
+    height: 280px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*تغييرحجمالصورةلتناسبالعنصر*/
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    /*تحريكالصورةعندتمريرالماوس*/
+
+}
+/*السهم*/
+.goto-next {
+    color: #f39c12;
+  margin-top: 20px;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight:bolder;
+}
+
+.arrow { /*تاثير السهم*/
+    stroke: #f39c12;
+    transition: stroke 0.3s;
+}
+
+.goto-next:hover .arrow {
+    stroke: #f1c40f;
+}
+/* تأثير التحريك */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% { /* تأثير الارتداد وسرعته*/
+        transform: translateY(10px);
+    }
+}
+
+/*السكشن التاني */
+
+.child2{
+    background-position: center 14.5px;
+    background-image: url(images/pic02.jpg);
+    background-attachment: fixed;/*علشان*/
+    background-size: cover;
+
+}
+.imge{
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    border: 0;
+    position: relative;
+}
+.content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+    padding: 3.852em 0 2.952em 0;
+    border-top: 10px solid #7f357e;
+    z-index: 1000; /* اجعل العنصر فوق العناصر الأخرى */
+}
+
+.content h2 {
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+
+
+/* .ul{
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    /* الشكل كان بايظ علشان انا كنت ضايف عرض اكتر وضيفت justify-content 
+} 
+.img-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.8);
+}
+.goto-next {
+    text-align: center;
+    position: relative;
+    /* Added for positioning the arrow 
+    display: inline-block;
+    /* Ensure it behaves like a link 
+    text-decoration: none;
+    /* Remove underline 
+    color: inherit;
+    /* Inherit text color 
+}
+  
+
+/* Remove the text "next" 
+.goto-next::before {
+    content: '';
+    /* Empty content to remove "next" 
+}
+
+.goto-next::after {
+    content: '^
+    /* Unicode for down arrow 
+    font-size: 2em;
+    position: absolute;
+    bottom: -1.5em;
+    /* Adjust as needed 
+    left: 50%;
+    transform: translateX(-50%);
+    color: #474242;
+    /* Match the text color 
+}
+
+
+.child2:before {
+    background-image: url(images/overlay.png);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*/
