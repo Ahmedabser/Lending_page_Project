@@ -282,25 +282,78 @@ header {
     border: 0;
     position: relative;
 }
+
+
 .content {
-    position: absolute;
+    position: absolute;/*علشان اعمل العنصر داخل الصورة*/
     left: 0;
     width: 100%;
-    opacity: 0.6;
+    opacity: 0.6;/*علشان اقلل من حدية الخط*/
     padding: 3.852em 0 2.952em 0;
     border-top: 10px solid #7f357e;
     z-index: 1000; /* اجعل العنصر فوق العناصر الأخرى */
-}
 
-.content h2 {
+}
+header h2{
+    font-size: 1.2em;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;/*علشان اعمل الخط كله كابيتل */
     margin-bottom: 4px;
     text-transform: uppercase;
     opacity: 0.8;
 }
 
 
+header p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* تحسين ترتيب الأعمدة باستخدام CSS Grid */
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* تقسيم العرض إلى 3 أعمدة متساوية */
+    gap: 20px; /* مسافة بين الأعمدة */
+}
+
+/* تنسيق الأعمدة */
+.col {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* تنسيق الفقرات داخل الأعمدة */
+.col p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #999;
+    margin-bottom: 15px; /* مسافة بين الفقرات داخل العمود */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تحريك العناصر عند التمرير (نمط إضافي لجعل التمرير أكثر جاذبية) 
+.col p:hover {
+    color: #ff4d6d;  تغيير اللون عند المرور على الفقرة 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}*/
 
 /* .ul{
     display: flex;
